@@ -1,6 +1,8 @@
 /////////////////////////
 mkdir ecommerce-api
+
 cd ecommerce-api
+
 npm init -y
 
 npm install express mongoose dotenv cors
@@ -19,8 +21,11 @@ ecommerce-api/
 ├── package.json
 
 การเชื่อมต่อกับ Front-end (React)
+
 npx create-react-app frontend
+
 cd ecommerce-frontend
+
 npm start
 
 npm install axios
