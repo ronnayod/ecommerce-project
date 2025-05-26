@@ -10,14 +10,23 @@ npm install express mongoose dotenv cors
 node index.js
 
 ecommerce-api/
+
 ├── models/
+
 │   ├── Product.js
+
 │   ├── Cart.js
+
 ├── routes/
+
 │   ├── products.js
+
 │   ├── cart.js
+
 ├── .env
+
 ├── index.js
+
 ├── package.json
 
 การเชื่อมต่อกับ Front-end (React)
