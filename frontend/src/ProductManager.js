@@ -32,14 +32,14 @@ function ProductManager() {
   };
 
   const handleDeleteProduct = async (id) => {
-    try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
-      fetchProducts();
-    } catch (err) {
-      console.error('Error deleting product:', err);
-    }
+      try {
+          console.log(id); 
+          await axios.delete(`http://localhost:5000/api/products/${id}`);
+          fetchProducts();
+      } catch (err) {
+          console.error('Error deleting product:', err);
+      }
   };
-
   const handleEditProduct = (product) => {
     setEditProduct({ ...product });
   };
