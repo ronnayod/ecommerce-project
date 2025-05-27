@@ -55,4 +55,34 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+// Route: PUT /api/products/:id
+// Updates a product by ID in the database
+router.put('/:id', async (req, res) => {
+    try {
+        // Validate if the ID is a valid MongoDB ObjectId
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return res.status(400).json({ message: 'Invalid product ID' });
+        }
+
+        // Find and update the product by ID
+        const product = await Product.findByIdAndUpdate(
+            req.params.id,
+            req.body, // ข้อมูลที่ส่งมาเพื่ออัปเดต
+            { new: true, runValidators: true } // ตัวเลือก: return ข้อมูลใหม่หลังอัปเดต และตรวจสอบ validation
+        );
+
+        if (!product) {
+            // If product not found, return 404
+            return res.status(404).json({ message: 'Product not found' });
+        }
+
+        // Successfully updated the product
+        res.json(product); // ส่งข้อมูลที่อัปเดตแล้วกลับ
+    } catch (error) {
+        // Handle any errors during update
+        console.error('Error:', error.message);
+        res.status(500).json({ message: error.message });
+    }
+});
+
 module.exports = router;

@@ -20,6 +20,7 @@ function ProductManager() {
     }
   };
 
+  // Add
   const handleAddProduct = async (e) => {
     e.preventDefault();
     try {
@@ -31,6 +32,7 @@ function ProductManager() {
     }
   };
 
+  // Delete
   const handleDeleteProduct = async (id) => {
       try {
           console.log(id); 
@@ -44,8 +46,10 @@ function ProductManager() {
     setEditProduct({ ...product });
   };
 
+  // Update
   const handleUpdateProduct = async (e) => {
     e.preventDefault();
+    console.log('Updating product:', editProduct); // ตรวจสอบข้อมูลก่อนส่ง
     try {
       await axios.put(`http://localhost:5000/api/products/${editProduct._id}`, editProduct);
       setEditProduct(null);
