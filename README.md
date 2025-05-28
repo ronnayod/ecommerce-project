@@ -9,6 +9,9 @@ npm install express mongoose dotenv cors
 
 node index.js
 
+// start server
+node server.js
+
 ecommerce-api/
 
 ├── models/
