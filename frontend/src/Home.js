@@ -8,6 +8,10 @@ export default function Home() {
       <Link to="/products">
         <button className="btn btn-primary mt-3">ไปยัง Product Manager</button>
       </Link>
+      <br />
+      <Link to="/user">
+        <button className="btn btn-primary mt-3">ไปยัง User</button>
+      </Link>
     </div>
   );
 }
