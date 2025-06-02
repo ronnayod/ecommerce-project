@@ -12,6 +12,10 @@ export default function Home() {
       <Link to="/user">
         <button className="btn btn-primary mt-3">ไปยัง User</button>
       </Link>
+      <br />
+      <Link to="/game">
+        <button className="btn btn-primary mt-3">ไปยัง game</button>
+      </Link>
     </div>
   );
 }

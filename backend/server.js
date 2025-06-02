@@ -4,6 +4,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const productRoutes = require('./routes/products'); // ตรวจสอบ path
 const cartRoutes = require('./routes/cart');
+const gameRoutes = require('./routes/game'); // เพิ่ม route เกม
+
 dotenv.config();
 
 const app = express();
@@ -20,6 +22,7 @@ mongoose.connect(process.env.MONGODB_URI)
 // Routes
 app.use('/api/products', productRoutes); // ตรวจสอบว่ามีบรรทัดนี้
 app.use('/api/cart', cartRoutes);
+app.use('/api/game', gameRoutes); // เพิ่ม route เกม
 
 app.get('/', (req, res) => {
   res.send('API is running...');
